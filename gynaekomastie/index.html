@@ -1175,6 +1175,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           + '&phone=' + encodeURIComponent(phone)
           + '&email=' + encodeURIComponent(mail);
 
+        // Push user-provided data to dataLayer for GTM Enhanced Conversions
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'form_submit',
+          'user_data': {
+            'email': mail,
+            'phone_number': phone,
+            'address': {
+              'first_name': firstName,
+              'last_name': lastName
+            }
+          }
+        });
+
         // Submit to Zapier webhook
         fetch('https://hooks.zapier.com/hooks/catch/10412562/2dvv5v4/', {
           method: 'POST',
