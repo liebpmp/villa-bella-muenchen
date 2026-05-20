@@ -1175,10 +1175,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           + '&phone=' + encodeURIComponent(phone)
           + '&email=' + encodeURIComponent(mail);
 
-        // Push user-provided data to dataLayer for GTM Enhanced Conversions
+        // === GTM User-Provided Data (Enhanced Conversions) ===
+        // Set global vars so GTM JS variables can read them anytime
+        window._user_email = mail;
+        window._user_phone = phone;
+        window._user_firstname = firstName;
+        window._user_lastname = lastName;
+
+        // Push to dataLayer for GTM Enhanced Conversions
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          'event': 'form_submit',
+          'event': 'generate_lead',
           'user_data': {
             'email': mail,
             'phone_number': phone,
@@ -1189,21 +1196,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         });
 
-        // Submit to Zapier webhook
-        fetch('https://hooks.zapier.com/hooks/catch/10412562/2dvv5v4/', {
-          method: 'POST',
-          body: formData
-        })
-        .then(function(response) { return response.json(); })
-        .then(function(result) {
-          console.log('Zapier Success:', result);
+        // Submit to Zapier (fire-and-forget via sendBeacon, then redirect after GTM delay)
+        var zapierData = new URLSearchParams(formData).toString();
+        try {
+          navigator.sendBeacon('https://hooks.zapier.com/hooks/catch/10412562/2dvv5v4/', formData);
+        } catch(e) {
+          // Fallback: fire-and-forget fetch
+          fetch('https://hooks.zapier.com/hooks/catch/10412562/2dvv5v4/', {
+            method: 'POST',
+            body: formData,
+            keepalive: true
+          }).catch(function(){});
+        }
+
+        // Delay redirect 500ms so GTM can process the dataLayer event + read form fields
+        setTimeout(function() {
           window.location.href = redirectUrl;
-        })
-        .catch(function(error) {
-          console.error('Zapier Error:', error);
-          // Redirect anyway on error
-          window.location.href = redirectUrl;
-        });
+        }, 500);
       });
     });
     </script>
