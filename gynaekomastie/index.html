@@ -920,7 +920,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="risk-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Antwort in 24h</span></div>
           </div>
           <div class="form-social-proof"><div class="proof-dot"></div><span>Jeden Monat vertrauen uns Männer aus ganz Europa</span></div>
-          <form id="contact-form" novalidate>
+          <form id="email-form" novalidate>
             <!-- Tracking Hidden Fields -->
             <input type="hidden" id="utm_source" name="utm_source" />
             <input type="hidden" id="utm_campaign" name="utm_campaign" />
@@ -940,14 +940,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="hidden" id="order_id" name="order_id" />
 
             <div class="form-row">
-              <div class="form-group"><label for="Anrede">Ihre Anrede *</label><select id="Anrede" name="Anrede" required style="width:100%;background:var(--white);border:1px solid #D0D0D0;border-radius:var(--radius-sm);padding:14px 16px;font-family:var(--font-sans);font-size:16px;color:var(--text-primary);appearance:auto;cursor:pointer;"><option value="Herr" selected>Herr</option><option value="Herr/Frau">Herr/Frau</option></select></div>
-              <div class="form-group"><label for="Name">Ihr Name *</label><input type="text" id="Name" name="Name" placeholder="Vorname und Nachname" required autocomplete="name"><div class="error-msg">Bitte geben Sie Ihren Namen ein.</div></div>
+              <div class="form-group"><label for="Anrede">Ihre Anrede *</label><select id="Anrede" name="Anrede" data-name="Anrede" required style="width:100%;background:var(--white);border:1px solid #D0D0D0;border-radius:var(--radius-sm);padding:14px 16px;font-family:var(--font-sans);font-size:16px;color:var(--text-primary);appearance:auto;cursor:pointer;"><option value="Herr" selected>Herr</option><option value="Herr/Frau">Herr/Frau</option></select></div>
+              <div class="form-group"><label for="Name">Ihr Name *</label><input type="text" id="Name" name="Name" data-name="Name" placeholder="Vorname und Nachname" required autocomplete="name"><div class="error-msg">Bitte geben Sie Ihren Namen ein.</div></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label for="E-Mail-Adresse">Ihre E-Mail *</label><input type="email" id="E-Mail-Adresse" name="E-Mail-Adresse" placeholder="E-Mail" required autocomplete="email"><div class="error-msg">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div></div>
-              <div class="form-group"><label for="Telefonnummer">Ihre Telefonnummer *</label><input type="tel" id="Telefonnummer" name="Telefonnummer" placeholder="Ihre Telefonnummer" required autocomplete="tel"><div class="error-msg">Bitte geben Sie eine gültige Telefonnummer ein.</div></div>
+              <div class="form-group"><label for="E-Mail-Adresse">Ihre E-Mail *</label><input type="email" id="E-Mail-Adresse" name="E-Mail-Adresse" data-name="E-Mail-Adresse" placeholder="E-Mail" required autocomplete="email"><div class="error-msg">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div></div>
+              <div class="form-group"><label for="Telefonnummer">Ihre Telefonnummer *</label><input type="tel" id="Telefonnummer" name="Telefonnummer" data-name="Telefonnummer" placeholder="Ihre Telefonnummer" required autocomplete="tel"><div class="error-msg">Bitte geben Sie eine gültige Telefonnummer ein.</div></div>
             </div>
-            <div class="form-group"><label for="Nachricht">Erzählen Sie uns kurz von Ihrer Situation <span class="optional">(optional)</span></label><textarea id="Nachricht" name="Nachricht" placeholder="z.B. seit wann besteht das Problem, was haben Sie bereits versucht..." rows="3"></textarea></div>
+            <div class="form-group"><label for="Nachricht">Erzählen Sie uns kurz von Ihrer Situation <span class="optional">(optional)</span></label><textarea id="Nachricht" name="Nachricht" data-name="Nachricht" placeholder="z.B. seit wann besteht das Problem, was haben Sie bereits versucht..." rows="3"></textarea></div>
             
             <p style="font-size:12px;color:var(--text-light);margin-bottom:12px;line-height:1.5;">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß der <a href="https://www.villabella-muenchen.de/datenschutz" target="_blank" style="color:var(--gold);text-decoration:underline;">Datenschutzerklärung</a> zu.</p>
             <button type="submit" class="btn-primary form-submit">Ja, Beratungstermin sichern →</button>
@@ -1115,7 +1115,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
 
       // ========== FORM SUBMIT → ZAPIER + eTERMIN ==========
-      var form = document.getElementById('contact-form');
+      var form = document.getElementById('email-form');
       if (!form) return;
 
       // Override existing submit handler
