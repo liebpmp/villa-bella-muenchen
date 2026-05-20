@@ -430,7 +430,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .form-step-indicator { margin-bottom: var(--space-md); }
     }
   </style>
-  <meta name="page-specific-behandlung" data-behandlung-id="TODO" data-behandlung_subkategorie="TODO">
+  <meta name="page-specific-behandlung" data-behandlung-id="69" data-behandlung_subkategorie="Brustverkleinerung">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -970,14 +970,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="hidden" id="order_id" name="order_id" />
 
             <div class="form-row">
-              <div class="form-group"><label for="anrede">Ihre Anrede *</label><select id="anrede" name="anrede" required style="width:100%;background:var(--white);border:1px solid #D0D0D0;border-radius:var(--radius-sm);padding:14px 16px;font-family:var(--font-sans);font-size:16px;color:var(--text-primary);appearance:auto;cursor:pointer;"><option value="Herr/Frau" selected>Herr/Frau</option><option value="Herr">Herr</option><option value="Frau">Frau</option></select></div>
-              <div class="form-group"><label for="name">Ihr Name *</label><input type="text" id="name" name="name" placeholder="Vorname und Nachname" required autocomplete="name"><div class="error-msg">Bitte geben Sie Ihren Namen ein.</div></div>
+              <div class="form-group"><label for="Anrede">Ihre Anrede *</label><select id="Anrede" name="Anrede" required style="width:100%;background:var(--white);border:1px solid #D0D0D0;border-radius:var(--radius-sm);padding:14px 16px;font-family:var(--font-sans);font-size:16px;color:var(--text-primary);appearance:auto;cursor:pointer;"><option value="Herr/Frau" selected>Herr/Frau</option><option value="Herr">Herr</option><option value="Frau">Frau</option></select></div>
+              <div class="form-group"><label for="Name">Ihr Name *</label><input type="text" id="Name" name="Name" placeholder="Vorname und Nachname" required autocomplete="name"><div class="error-msg">Bitte geben Sie Ihren Namen ein.</div></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label for="email">Ihre E-Mail *</label><input type="email" id="email" name="email" placeholder="E-Mail" required autocomplete="email"><div class="error-msg">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div></div>
-              <div class="form-group"><label for="telefon">Ihre Telefonnummer *</label><input type="tel" id="telefon" name="telefon" placeholder="Ihre Telefonnummer" required autocomplete="tel"><div class="error-msg">Bitte geben Sie eine gültige Telefonnummer ein.</div></div>
+              <div class="form-group"><label for="E-Mail-Adresse">Ihre E-Mail *</label><input type="email" id="E-Mail-Adresse" name="E-Mail-Adresse" placeholder="E-Mail" required autocomplete="email"><div class="error-msg">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div></div>
+              <div class="form-group"><label for="Telefonnummer">Ihre Telefonnummer *</label><input type="tel" id="Telefonnummer" name="Telefonnummer" placeholder="Ihre Telefonnummer" required autocomplete="tel"><div class="error-msg">Bitte geben Sie eine gültige Telefonnummer ein.</div></div>
             </div>
-            <div class="form-group"><label for="nachricht">Erzählen Sie uns kurz von Ihren Beschwerden <span class="optional">(optional)</span></label><textarea id="nachricht" name="nachricht" placeholder="z.B. Rückenschmerzen, BH-Probleme, Einschränkungen im Alltag..." rows="3"></textarea></div>
+            <div class="form-group"><label for="Nachricht">Erzählen Sie uns kurz von Ihren Beschwerden <span class="optional">(optional)</span></label><textarea id="Nachricht" name="Nachricht" placeholder="z.B. Rückenschmerzen, BH-Probleme, Einschränkungen im Alltag..." rows="3"></textarea></div>
             
             <p style="font-size:12px;color:var(--text-light);margin-bottom:12px;line-height:1.5;">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß der <a href="https://www.villabella-muenchen.de/datenschutz" target="_blank" style="color:var(--gold);text-decoration:underline;">Datenschutzerklärung</a> zu.</p>
             <button type="submit" class="btn-primary form-submit">Ja, Beratungstermin sichern →</button>
@@ -1172,10 +1172,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // Validation
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        var nm = document.getElementById('name');
-        var tel = document.getElementById('telefon');
-        var em = document.getElementById('email');
-        var ds = document.getElementById('datenschutz');
+        var nm = document.getElementById('Name');
+        var tel = document.getElementById('Telefonnummer');
+        var em = document.getElementById('E-Mail-Adresse');
+        var ds = document.getElementById('datenschutz-removed');
 
         var v1 = nm && nm.value.trim().length >= 2;
         var v2 = tel && tel.value.replace(/\D/g,'').length >= 6;
@@ -1183,7 +1183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var v4 = true;
 
         // Show field errors
-        [['name','name',v1],['telefon','tel',v2],['email','email',v3]].forEach(function(x) {
+        [['Name','name',v1],['Telefonnummer','tel',v2],['E-Mail-Adresse','email',v3]].forEach(function(x) {
           var el = document.getElementById(x[0]);
           if (!el) return;
           var g = el.closest('.form-group');
@@ -1204,16 +1204,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var formData = new FormData(form);
 
         // Map field names to match Webflow/Zapier expectations
-        var fullName = formData.get('name') || '';
-        var phone = formData.get('telefon') || '';
-        var mail = formData.get('email') || '';
-        var salutation = formData.get('anrede') || '';
+        var fullName = formData.get('Name') || '';
+        var phone = formData.get('Telefonnummer') || '';
+        var mail = formData.get('E-Mail-Adresse') || '';
+        var salutation = formData.get('Anrede') || '';
 
-        // Add Webflow-compatible field names
-        formData.append('Name', fullName);
-        formData.append('Telefonnummer', phone);
-        formData.append('E-Mail-Adresse', mail);
-        formData.append('Anrede', salutation);
 
         var nameParts = fullName.split(' ');
         var firstName = nameParts[0];
