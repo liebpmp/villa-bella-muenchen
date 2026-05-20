@@ -411,6 +411,7 @@
       .form-step-indicator { margin-bottom: var(--space-md); }
     }
   </style>
+  <meta name="page-specific-behandlung" data-behandlung-id="TODO" data-behandlung_subkategorie="TODO">
 </head>
 <body>
 
@@ -909,6 +910,24 @@
           </div>
           <div class="form-social-proof"><div class="proof-dot"></div><span>Jeden Monat vertrauen uns Männer aus ganz Europa</span></div>
           <form id="contact-form" novalidate>
+            <!-- Tracking Hidden Fields -->
+            <input type="hidden" id="utm_source" name="utm_source" />
+            <input type="hidden" id="utm_campaign" name="utm_campaign" />
+            <input type="hidden" id="utm_term" name="utm_term" />
+            <input type="hidden" id="lp_url" name="lp_url" />
+            <input type="hidden" id="utm_content" name="utm_content" />
+            <input type="hidden" id="utm_medium" name="utm_medium" />
+            <input type="hidden" id="gclid" name="gclid" />
+            <input type="hidden" id="ad_id" name="ad_id" />
+            <input type="hidden" id="keyword" name="keyword" />
+            <input type="hidden" id="placement" name="placement" />
+            <input type="hidden" id="matchtype" name="matchtype" />
+            <input type="hidden" id="behandlung_id" name="behandlung_id" />
+            <input type="hidden" id="behandlung_subkategorie" name="behandlung_subkategorie" />
+            <input type="hidden" id="gbraid" name="gbraid" />
+            <input type="hidden" id="wbraid" name="wbraid" />
+            <input type="hidden" id="order_id" name="order_id" />
+
             <div class="form-row">
               <div class="form-group"><label for="anrede">Ihre Anrede *</label><select id="anrede" name="anrede" required style="width:100%;background:var(--white);border:1px solid #D0D0D0;border-radius:var(--radius-sm);padding:14px 16px;font-family:var(--font-sans);font-size:16px;color:var(--text-primary);appearance:auto;cursor:pointer;"><option value="Herr" selected>Herr</option><option value="Herr/Frau">Herr/Frau</option></select></div>
               <div class="form-group"><label for="name">Ihr Name *</label><input type="text" id="name" name="name" placeholder="Vorname und Nachname" required autocomplete="name"><div class="error-msg">Bitte geben Sie Ihren Namen ein.</div></div>
@@ -992,7 +1011,7 @@
     (function(){var h=document.getElementById('site-header');window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>10)},{passive:true})})();
     (function(){document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href');if(href==='#')return;e.preventDefault();var t=document.querySelector(href);if(!t)return;window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'})})})})();
     (function(){var items=document.querySelectorAll('.faq-item');items.forEach(function(item){var q=item.querySelector('.faq-question'),a=item.querySelector('.faq-answer'),inner=item.querySelector('.faq-answer-inner');q.addEventListener('click',function(){var isOpen=item.classList.contains('open');items.forEach(function(o){o.classList.remove('open');o.querySelector('.faq-question').setAttribute('aria-expanded','false');o.querySelector('.faq-answer').style.maxHeight='0'});if(!isOpen){item.classList.add('open');q.setAttribute('aria-expanded','true');a.style.maxHeight=inner.scrollHeight+'px'}});q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click()}})})})();
-    (function(){var form=document.getElementById('contact-form'),success=document.getElementById('form-success');if(!form)return;var emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;function validate(input,type){var g=input.closest('.form-group');if(!g)return false;var v=input.value.trim(),ok=true;if(type==='name')ok=v.length>=2;else if(type==='tel')ok=v.replace(/\D/g,'').length>=6;else if(type==='email')ok=emailRegex.test(v);if(!ok){g.classList.add('has-error');input.classList.add('error')}else{g.classList.remove('has-error');input.classList.remove('error')}return ok}var nm=document.getElementById('name'),tel=document.getElementById('telefon'),em=document.getElementById('email');if(nm)nm.addEventListener('blur',function(){validate(nm,'name')});if(tel)tel.addEventListener('blur',function(){validate(tel,'tel')});if(em)em.addEventListener('blur',function(){validate(em,'email')});form.addEventListener('submit',function(e){e.preventDefault();var ds=document.getElementById('datenschutz'),ce=document.getElementById('checkbox-error');var v1=validate(nm,'name'),v2=validate(tel,'tel'),v3=validate(em,'email'),v4=ds.checked;if(!v4)ce.classList.add('has-error');else ce.classList.remove('has-error');if(v1&&v2&&v3&&v4){form.style.display='none';success.style.display='block';success.scrollIntoView({behavior:'smooth',block:'center'})}})})();
+    /* Old form handler removed — replaced by tracking script */
     (function(){var s=document.getElementById('mobile-sticky-cta'),k=document.getElementById('kontakt');if(!s||!k)return;function c(){var r=k.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)s.style.display='none';else if(window.innerWidth<=768)s.style.display='block'}window.addEventListener('scroll',c,{passive:true});window.addEventListener('resize',c,{passive:true});c()})();
     (function(){if(window.innerWidth<=768)return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:0.1});document.querySelectorAll('.methods-card,.testimonial-card,.timeline-step,.objection-card').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease, transform 0.5s ease';obs.observe(el)})})();
     (function(){if(window.innerWidth<=768)return;var cols=document.querySelectorAll('.compare-col');var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');var bodyRows=e.target.querySelectorAll('.compare-row');bodyRows.forEach(function(row,i){setTimeout(function(){row.classList.add('visible')},200+i*120)})}})},{threshold:0.2});cols.forEach(function(c){obs.observe(c)})})();
@@ -1036,5 +1055,139 @@
     })();
     (function(){var done=false,strip=document.querySelector('.trust-strip');if(!strip)return;function count(el,target,suffix){var start=null;function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/1500,1);var eased=1-Math.pow(1-p,3);el.textContent=Math.floor(eased*target).toLocaleString('de-DE')+suffix;if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting&&!done){done=true;var nums=strip.querySelectorAll('.trust-number');if(nums[0])count(nums[0],24000,'+');if(nums[1])nums[1].textContent='Note 1,0';if(nums[2])nums[2].textContent='37 Jahre';if(nums[3])count(nums[3],88000,'+')}})},{threshold:0.3});obs.observe(strip)})();
   </script>
+
+    <!-- Villa Bella Tracking + Zapier + eTermin -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ========== UTM PARAMETER CAPTURE ==========
+      var params = new URLSearchParams(window.location.search);
+      var utmFields = ['utm_source','utm_campaign','utm_term','utm_content','utm_medium','gclid','ad_id','keyword','placement','matchtype','gbraid','wbraid'];
+      utmFields.forEach(function(f) {
+        var el = document.getElementById(f);
+        if (el && params.get(f)) el.value = params.get(f);
+      });
+      var lpField = document.getElementById('lp_url');
+      if (lpField) lpField.value = window.location.href;
+
+      // ========== SESSION-STABLE ORDER ID ==========
+      var orderField = document.getElementById('order_id');
+      if (orderField) {
+        var existingId = null;
+        try { existingId = sessionStorage.getItem('vb_session_order_id'); } catch(e) {}
+        if (!existingId) {
+          var newId = null;
+          try {
+            if (window.crypto && typeof crypto.randomUUID === 'function') {
+              newId = crypto.randomUUID();
+            } else if (window.crypto && typeof crypto.getRandomValues === 'function') {
+              var array = new Uint32Array(4);
+              crypto.getRandomValues(array);
+              newId = 'VB-' + Date.now() + '-' + array[0].toString(36) + '-' + array[1].toString(36) + '-' + array[2].toString(36) + '-' + array[3].toString(36);
+            }
+          } catch(e) {}
+          if (!newId) {
+            newId = 'VB-' + Date.now() + '-' + Math.floor(Math.random()*1000000).toString(36) + '-' + Math.floor(Math.random()*1000000).toString(36);
+          }
+          existingId = newId;
+          try { sessionStorage.setItem('vb_session_order_id', existingId); } catch(e) {}
+        }
+        orderField.value = existingId;
+      }
+
+      // ========== BEHANDLUNG META TAGS ==========
+      var metaTag = document.querySelector('meta[name="page-specific-behandlung"]');
+      if (metaTag) {
+        var bId = document.getElementById('behandlung_id');
+        var bSub = document.getElementById('behandlung_subkategorie');
+        if (bId) bId.value = metaTag.getAttribute('data-behandlung-id') || '';
+        if (bSub) bSub.value = metaTag.getAttribute('data-behandlung_subkategorie') || '';
+      }
+
+      // ========== FORM SUBMIT → ZAPIER + eTERMIN ==========
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+
+      // Override existing submit handler
+      form.removeEventListener('submit', form._oldHandler);
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var nm = document.getElementById('name');
+        var tel = document.getElementById('telefon');
+        var em = document.getElementById('email');
+        var ds = document.getElementById('datenschutz');
+
+        var v1 = nm && nm.value.trim().length >= 2;
+        var v2 = tel && tel.value.replace(/\D/g,'').length >= 6;
+        var v3 = em && emailRegex.test(em.value.trim());
+        var v4 = ds && ds.checked;
+
+        // Show field errors
+        [['name','name',v1],['telefon','tel',v2],['email','email',v3]].forEach(function(x) {
+          var el = document.getElementById(x[0]);
+          if (!el) return;
+          var g = el.closest('.form-group');
+          if (!g) return;
+          if (!x[2]) { g.classList.add('has-error'); el.classList.add('error'); }
+          else { g.classList.remove('has-error'); el.classList.remove('error'); }
+        });
+        var ce = document.getElementById('checkbox-error');
+        if (ce) { if (!v4) ce.classList.add('has-error'); else ce.classList.remove('has-error'); }
+
+        if (!(v1 && v2 && v3 && v4)) return;
+
+        // Emergency order ID
+        var orderCheck = document.getElementById('order_id');
+        if (orderCheck && !orderCheck.value) {
+          orderCheck.value = 'VB-SUBMIT-' + Date.now() + '-' + Math.floor(Math.random()*1000000);
+        }
+
+        var formData = new FormData(form);
+
+        // Map field names to match Webflow/Zapier expectations
+        var fullName = formData.get('name') || '';
+        var phone = formData.get('telefon') || '';
+        var mail = formData.get('email') || '';
+        var salutation = formData.get('anrede') || '';
+
+        // Add Webflow-compatible field names
+        formData.append('Name', fullName);
+        formData.append('Telefonnummer', phone);
+        formData.append('E-Mail-Adresse', mail);
+        formData.append('Anrede', salutation);
+
+        var nameParts = fullName.split(' ');
+        var firstName = nameParts[0];
+        var lastName = nameParts.slice(1).join(' ') || firstName;
+
+        // eTermin redirect URL
+        var redirectUrl = 'https://www.etermin.net/villa-bella/serviceidlimitto/527113,527761,527762?serviceidpresel=527113&herkunft=208&lp=229&bookingtype=landingpage&collapse=0'
+          + '&lastname=' + encodeURIComponent(lastName)
+          + '&firstname=' + encodeURIComponent(firstName)
+          + '&salutation=' + encodeURIComponent(salutation)
+          + '&phone=' + encodeURIComponent(phone)
+          + '&email=' + encodeURIComponent(mail);
+
+        // Submit to Zapier webhook
+        fetch('https://hooks.zapier.com/hooks/catch/10412562/2dvv5v4/', {
+          method: 'POST',
+          body: formData
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(result) {
+          console.log('Zapier Success:', result);
+          window.location.href = redirectUrl;
+        })
+        .catch(function(error) {
+          console.error('Zapier Error:', error);
+          // Redirect anyway on error
+          window.location.href = redirectUrl;
+        });
+      });
+    });
+    </script>
+
 </body>
 </html>
