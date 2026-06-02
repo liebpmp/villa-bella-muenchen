@@ -97,12 +97,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-badges-under-video { display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap; justify-content: flex-start; margin-right: -80px; }
     .hero-badges-under-video .hero-badge { background: var(--gold-ultralight); border: 1px solid rgba(201,169,110,0.25); border-radius: 20px; padding: 6px 12px; font-size: 12px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
     .hero-badges-under-video .hero-badge .badge-stars { color: var(--gold); font-size: 11px; }
-    .hero-badges-under-button { display: flex; gap: 10px; margin-top: var(--space-md); flex-wrap: wrap; }
-    .hero-badges-under-button .hero-badge { background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; padding: 6px 12px; font-size: 12px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: box-shadow 0.2s ease; }
-    .hero-badges-under-button .hero-badge:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .hero-badges-under-button .hero-badge .badge-icon { width: 20px; height: 20px; flex-shrink: 0; }
-    .hero-badges-under-button .hero-badge .badge-rating-text { font-weight: 700; color: var(--text-primary); }
-    .hero-badges-under-button .hero-badge .badge-platform-name { color: var(--text-light); font-size: 11px; }
+    .hero-badges-under-button { display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap; }
+    .hero-badges-under-button .hero-badge { background: var(--gold-ultralight); border: 1px solid rgba(201,169,110,0.2); border-radius: 20px; padding: 5px 10px; font-size: 11px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+    .hero-badges-under-button .hero-badge .badge-stars { color: var(--gold); font-size: 10px; }
     .hero-badges-mobile { display: none; }
 
     .trust-strip { background: var(--gold-ultralight); padding: 28px 0; }
@@ -122,17 +119,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .testimonial-quote { font-style: italic; font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-md); }
     .testimonial-author { font-weight: 600; font-size: 14px; color: var(--text-primary); }
     .testimonial-source { font-size: 13px; color: var(--text-light); }
-    .review-badges { display: flex; gap: var(--space-lg); justify-content: center; margin-top: var(--space-2xl); flex-wrap: wrap; }
-    .review-badge { display: flex; flex-direction: column; align-items: center; background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius-lg); padding: 24px 28px 20px; min-width: 200px; flex: 1 1 auto; max-width: 280px; text-decoration: none; color: inherit; transition: all 0.25s ease; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
-    .review-badge:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(201,169,110,0.18); transform: translateY(-3px); }
-    .review-badge .badge-logo { width: 48px; height: 48px; margin-bottom: 12px; }
-    .review-badge .badge-platform { font-weight: 700; font-size: 16px; color: var(--text-primary); margin-bottom: 6px; }
-    .review-badge .badge-stars-row { display: flex; gap: 2px; margin-bottom: 4px; }
-    .review-badge .badge-stars-row svg { width: 16px; height: 16px; }
-    .review-badge .badge-rating { color: var(--text-primary); font-size: 15px; font-weight: 600; }
-    .review-badge .badge-count { font-size: 13px; color: var(--text-light); margin-top: 4px; }
-    .review-badge .badge-cta { font-size: 12px; color: var(--gold-dark); font-weight: 600; margin-top: 10px; opacity: 0; transition: opacity 0.2s ease; }
-    .review-badge:hover .badge-cta { opacity: 1; }
+    .review-badges { display: flex; gap: var(--space-md); justify-content: center; margin-top: var(--space-2xl); flex-wrap: wrap; }
+    .review-badge { display: flex; flex-direction: column; align-items: center; background: var(--white); border: 1px solid rgba(201,169,110,0.2); border-radius: var(--radius-md); padding: 16px 24px; min-width: 180px; flex: 1 1 auto; text-decoration: none; color: inherit; transition: all 0.25s ease; cursor: pointer; }
+    .review-badge:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,169,110,0.18); transform: translateY(-2px); }
+    .review-badge .badge-platform { font-weight: 700; font-size: 14px; color: var(--text-primary); margin-bottom: 4px; }
+    .review-badge .badge-rating { color: var(--gold); font-size: 14px; font-weight: 600; }
+    .review-badge .badge-count { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+    .review-badge .badge-cta { font-size: 12px; color: var(--gold-dark); font-weight: 600; margin-top: 8px; }
 
     .process-stack { position: relative; }
     .process-card-wrapper { position: sticky; margin-bottom: 40px; }
@@ -348,11 +341,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .hero-image { display: none; }
       .hero-video-mobile { display: block; }
       .hero-badges-under-button { display: none; }
-      .hero-badges-mobile { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-md); margin-bottom: var(--space-xl); justify-content: center; }
-      .hero-badges-mobile .hero-badge { background: var(--white); border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; padding: 6px 12px; font-size: 12px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-      .hero-badges-mobile .hero-badge .badge-icon { width: 18px; height: 18px; flex-shrink: 0; }
-      .hero-badges-mobile .hero-badge .badge-rating-text { font-weight: 700; color: var(--text-primary); font-size: 12px; }
-      .hero-badges-mobile .hero-badge .badge-platform-name { color: var(--text-light); font-size: 11px; }
+      .hero-badges-mobile { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); margin-bottom: var(--space-xl); justify-content: center; }
+      .hero-badges-mobile .hero-badge { background: var(--gold-ultralight); border: 1px solid rgba(201,169,110,0.25); border-radius: 20px; padding: 6px 12px; font-size: 12px; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+      .hero-badges-mobile .hero-badge .badge-stars { color: var(--gold); font-size: 11px; }
       .hero { padding: 100px 0 0; }
       .problem-grid { grid-template-columns: 1fr; }
       .problem-image { order: 2; }
@@ -389,11 +380,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .btn-secondary-outline { width: 100%; }
       .hero-cta-group { flex-direction: column; }
       .hero-badges-mobile { gap: 6px; }
-      .hero-badges-mobile .hero-badge { font-size: 11px; padding: 5px 10px; gap: 6px; }
-      .hero-badges-mobile .hero-badge .badge-icon { width: 16px; height: 16px; }
-      .review-badges { gap: var(--space-sm); }
-      .review-badge { min-width: 140px; padding: 16px 14px 14px; }
-      .review-badge .badge-logo { width: 36px; height: 36px; margin-bottom: 8px; }
+      .hero-badges-mobile .hero-badge { font-size: 11px; padding: 5px 10px; }
       .process-card { flex-direction: column; gap: var(--space-sm); }
       .process-card .process-num { width: 40px; height: 40px; min-width: 40px; font-size: 17px; }
       .trust-strip { padding: 20px 16px; }
@@ -471,18 +458,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="hero-micro">✓ 100% unverbindlich · ✓ Antwort innerhalb von 24h · ✓ Absolut diskret</p>
 
           <div class="hero-badges-under-button">
-            <div class="hero-badge">
-              <svg class="badge-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#06C1A8"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span><span class="badge-rating-text">Note 1,0</span> <span class="badge-platform-name">Jameda</span></span>
-            </div>
-            <div class="hero-badge">
-              <svg class="badge-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4285F4"/><path d="M12.24 10.28H17.4v1.44h-3.72c.06 1.02.54 1.68 1.5 2.1.48.18 1.02.3 1.62.3.96 0 1.74-.24 2.34-.72l.96 1.26c-.84.66-1.92 1.02-3.3 1.02-1.08 0-2.04-.24-2.82-.72-.78-.48-1.32-1.14-1.62-1.98-.3-.84-.3-1.74 0-2.58.3-.84.84-1.5 1.62-1.98.78-.48 1.68-.72 2.7-.72 1.14 0 2.1.3 2.88.84l-.96 1.26c-.54-.42-1.2-.66-1.98-.66-.66 0-1.2.18-1.62.48-.42.36-.66.84-.78 1.44z" fill="#fff"/></svg>
-              <span><span class="badge-rating-text">5,0 Sterne</span> <span class="badge-platform-name">Google</span></span>
-            </div>
-            <div class="hero-badge">
-              <svg class="badge-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#00B67A"/><path d="M12 6l1.76 3.56L17.6 10l-2.8 2.72.66 3.88L12 14.64 8.54 16.6l.66-3.88L6.4 10l3.84-.44z" fill="#fff"/></svg>
-              <span><span class="badge-rating-text">Empfohlen</span> <span class="badge-platform-name">Doctify</span></span>
-            </div>
+            <div class="hero-badge"><span class="badge-stars">★★★★★</span> <strong>Note 1,0</strong> Jameda</div>
+            <div class="hero-badge"><span class="badge-stars">★★★★★</span> <strong>5 Sterne</strong> Google</div>
+            <div class="hero-badge"><span class="badge-stars">★★★★★</span> <strong>Empfohlen</strong> Doctify</div>
           </div>
 
           <div class="hero-video-mobile">
@@ -491,18 +469,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
           <div class="hero-badges-mobile">
-            <div class="hero-badge">
-              <svg class="badge-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#06C1A8"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span><span class="badge-rating-text">Note 1,0</span> <span class="badge-platform-name">Jameda</span></span>
-            </div>
-            <div class="hero-badge">
-              <svg class="badge-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4285F4"/><path d="M12.24 10.28H17.4v1.44h-3.72c.06 1.02.54 1.68 1.5 2.1.48.18 1.02.3 1.62.3.96 0 1.74-.24 2.34-.72l.96 1.26c-.84.66-1.92 1.02-3.3 1.02-1.08 0-2.04-.24-2.82-.72-.78-.48-1.32-1.14-1.62-1.98-.3-.84-.3-1.74 0-2.58.3-.84.84-1.5 1.62-1.98.78-.48 1.68-.72 2.7-.72 1.14 0 2.1.3 2.88.84l-.96 1.26c-.54-.42-1.2-.66-1.98-.66-.66 0-1.2.18-1.62.48-.42.36-.66.84-.78 1.44z" fill="#fff"/></svg>
-              <span><span class="badge-rating-text">5,0 Sterne</span> <span class="badge-platform-name">Google</span></span>
-            </div>
-            <div class="hero-badge">
-              <svg class="badge-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#00B67A"/><path d="M12 6l1.76 3.56L17.6 10l-2.8 2.72.66 3.88L12 14.64 8.54 16.6l.66-3.88L6.4 10l3.84-.44z" fill="#fff"/></svg>
-              <span><span class="badge-rating-text">Empfohlen</span> <span class="badge-platform-name">Doctify</span></span>
-            </div>
+            <div class="hero-badge"><span class="badge-stars">★★★★★</span> <strong>Note 1,0</strong> Jameda</div>
+            <div class="hero-badge"><span class="badge-stars">★★★★★</span> <strong>5 Sterne</strong> Google</div>
+            <div class="hero-badge"><span class="badge-stars">★★★★★</span> <strong>Empfohlen</strong> Doctify</div>
           </div>
         </div>
         <div class="hero-image hero-video-desktop">
@@ -605,58 +574,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="review-badges">
         <a class="review-badge" href="https://www.google.com/search?q=VILLA+BELLA+%7C+Praxis+f%C3%BCr+Plastische+Chirurgie+%26+Sch%C3%B6nheitschirurgie+Rezensionen" target="_blank" rel="noopener">
-          <svg class="badge-logo" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="23" fill="#fff" stroke="#E8EAED" stroke-width="1"/>
-            <path d="M33.76 24.28c0-.64-.06-1.26-.16-1.84H24.2v3.52h5.36c-.24 1.24-.94 2.3-1.98 3-.66.44-1.5.7-2.44.7-1.88 0-3.48-1.28-4.04-3-.14-.44-.22-.9-.22-1.38s.08-.94.22-1.38c.56-1.72 2.16-3 4.04-3 1.06 0 2.02.36 2.76 1.08l2.08-2.08c-1.26-1.18-2.9-1.9-4.84-1.9-2.86 0-5.3 1.74-6.36 4.22-.36.84-.56 1.76-.56 2.72s.2 1.88.56 2.72c1.06 2.48 3.5 4.22 6.36 4.22 1.8 0 3.32-.6 4.42-1.6 1.26-1.16 2-2.86 2-4.9z" fill="#4285F4"/>
-            <path d="M17.06 25.66l-.48.36-1.7 1.32c1.14 2.24 3.48 3.78 6.18 3.78 1.86 0 3.42-.62 4.56-1.66l-2.16-1.68c-.6.4-1.36.64-2.26.64-1.74 0-3.22-1.18-3.74-2.76h-.4z" fill="#34A853"/>
-            <path d="M15.28 22.38c-.18.52-.28 1.08-.28 1.66s.1 1.14.28 1.66l2.18-1.68c-.12-.34-.18-.7-.18-1.08 0-.38.06-.74.18-1.08l-2.18-1.48z" fill="#FBBC05"/>
-            <path d="M21.06 18.94c.98 0 1.86.34 2.56.98l1.92-1.92c-1.16-1.08-2.68-1.74-4.48-1.74-2.7 0-5.04 1.54-6.18 3.78l2.18 1.68c.52-1.58 2-2.78 3.74-2.78h.26z" fill="#EA4335"/>
-          </svg>
           <span class="badge-platform">Google</span>
-          <div class="badge-stars-row">
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#FBBC05"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#FBBC05"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#FBBC05"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#FBBC05"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#FBBC05"/></svg>
-          </div>
-          <span class="badge-rating">5,0 von 5</span>
+          <span class="badge-rating">★★★★★ 5,0 Sterne</span>
           <span class="badge-count">80+ Bewertungen</span>
           <span class="badge-cta">Bewertungen ansehen →</span>
         </a>
         <a class="review-badge" href="https://www.jameda.de/gesundheitseinrichtungen/praxisklinik-villa-bella-dr-med-ludger-meyer-facharzt-fuer-plastische-und-aesthetische-chirurgie" target="_blank" rel="noopener">
-          <svg class="badge-logo" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="23" fill="#fff" stroke="#06C1A8" stroke-width="1.5"/>
-            <path d="M24 10c-7.73 0-14 6.27-14 14s6.27 14 14 14 14-6.27 14-14-6.27-14-14-14z" fill="#06C1A8"/>
-            <text x="24" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">1,0</text>
-          </svg>
           <span class="badge-platform">Jameda</span>
-          <div class="badge-stars-row">
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#06C1A8"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#06C1A8"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#06C1A8"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#06C1A8"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#06C1A8"/></svg>
-          </div>
-          <span class="badge-rating">Note 1,0</span>
+          <span class="badge-rating">★★★★★ 5,0 Sterne</span>
           <span class="badge-count">150+ Bewertungen</span>
           <span class="badge-cta">Bewertungen ansehen →</span>
         </a>
         <a class="review-badge" href="https://www.doctify.com/de/practice/praxis-brienner-str-14-12" target="_blank" rel="noopener">
-          <svg class="badge-logo" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="23" fill="#fff" stroke="#00B67A" stroke-width="1.5"/>
-            <path d="M24 10c-7.73 0-14 6.27-14 14s6.27 14 14 14 14-6.27 14-14-6.27-14-14-14z" fill="#00B67A"/>
-            <path d="M20 19l4 8 4-8M20 29h8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
           <span class="badge-platform">Doctify</span>
-          <div class="badge-stars-row">
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#00B67A"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#00B67A"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#00B67A"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#00B67A"/></svg>
-            <svg viewBox="0 0 16 16"><path d="M8 1l2.12 4.3 4.74.69-3.43 3.34.81 4.72L8 11.77 3.76 14.05l.81-4.72L1.14 5.99l4.74-.69z" fill="#00B67A"/></svg>
-          </div>
-          <span class="badge-rating">4,94 / 5</span>
+          <span class="badge-rating">★★★★★ 4,94 / 5 Sterne</span>
           <span class="badge-count">50+ Bewertungen</span>
           <span class="badge-cta">Bewertungen ansehen →</span>
         </a>
